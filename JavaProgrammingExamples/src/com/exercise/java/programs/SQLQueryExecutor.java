@@ -8,12 +8,6 @@ import java.sql.Statement;
 
 public class SQLQueryExecutor {
 
-	// private static final String DB_DRIVER = "";
-	// private static final String DB_CONNECTION =
-	// "asqal10oclon100.dca.diginsite.net:1521:BPPAQA1";
-	// private static final String DB_USER = "BPP_APP";
-	// private static final String DB_PASSWORD = "PPayQ4";
-
 	public static Connection GetConnection() throws SQLException {
 
 		Connection dbconnection = null;
