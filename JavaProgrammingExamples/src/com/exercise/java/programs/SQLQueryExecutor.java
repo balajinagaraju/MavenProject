@@ -24,8 +24,8 @@ public class SQLQueryExecutor {
 
 			dbconnection = DriverManager
 					.getConnection(
-							"jdbc:oracle:thin:@asqal10oclon100.dca.diginsite.net:1521/BPPAQA1",
-							"BPP_APP", "PPayQ4");
+							"jdbc:oracle:thin:@somedatabasename:someportnumber/someservicename",
+							"SomeUsername", "SomePassword");
 
 		} catch (SQLException e) {
 
