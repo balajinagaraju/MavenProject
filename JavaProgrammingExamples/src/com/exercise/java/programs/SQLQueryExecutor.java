@@ -1,4 +1,4 @@
-package com.exercise.java.programs;
+package com.di.positivepay.automation.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class SQLQueryExecutor {
 
-	public static Connection GetConnection() throws SQLException {
+	public Connection GetConnection() throws SQLException {
 
 		Connection dbconnection = null;
 
@@ -18,8 +18,8 @@ public class SQLQueryExecutor {
 
 			dbconnection = DriverManager
 					.getConnection(
-							"jdbc:oracle:thin:@somedatabasename:someportnumber/someservicename",
-							"SomeUsername", "SomePassword");
+							"jdbc:oracle:thin:@asqal10oclon100.dca.diginsite.net:1521/BPPAQA1",
+							"BPP_APP", "PPayQ4");
 
 		} catch (SQLException e) {
 
@@ -35,15 +35,12 @@ public class SQLQueryExecutor {
 
 	}
 
-	public static ResultSet selectRecordsFromDb(String SQLQueryToExecute)
+	public ResultSet selectRecordsFromDb(String SQLQueryToExecute)
 			throws SQLException {
 
 		Connection dbConnection = null;
 		Statement statement = null;
 		ResultSet rs = null;
-
-		// String selectTableSQL =
-		// "select LOCATION_ID from BPP.LOCATION_ACCOUNT";
 
 		try {
 			dbConnection = GetConnection();
@@ -52,27 +49,9 @@ public class SQLQueryExecutor {
 			// execute select SQL statement
 			rs = statement.executeQuery(SQLQueryToExecute);
 
-			// while (rs.next()) {
-			//
-			// String LOCATIONACCOUNTID = rs.getString("LOCATION_ID");
-			//
-			// System.out.println("LOCATIONID : " + LOCATIONACCOUNTID);
-			//
-			// }
-
 		} catch (SQLException e) {
 
 			System.out.println(e.getMessage());
-
-		} finally {
-
-			if (statement != null) {
-				statement.close();
-			}
-
-			if (dbConnection != null) {
-				dbConnection.close();
-			}
 
 		}
 
