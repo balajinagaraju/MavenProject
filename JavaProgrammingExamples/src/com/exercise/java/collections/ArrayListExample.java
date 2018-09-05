@@ -3,7 +3,7 @@ package com.exercise.java.collections;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-//Array list a dynamic array. 
+//Array list a dynamic array. Test
 public class ArrayListExample {
 
 	public static void main(String args[]) {
